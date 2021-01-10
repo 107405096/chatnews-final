@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 清除瀏覽器預設的風格 -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+	<!-- 載入思源黑體 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        div, p, img, a{
+            position: absolute;
+            box-sizing: border-box
+        }
+
+        p{
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 900;
+            text-align: justify;
+            color: #464646;
+            line-height: 33px;
+
+        }
+
+
+        #titleBackground{
+            width: 1298px;
+            left: 74px;
+            top: 342px;
+            filter: drop-shadow(-4px 8px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #logo{
+            width: 191px;
+            left: 73px;
+            top: 80px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #chanews{
+            width: 265px;
+            height: 178px;
+            left: 247px;
+            top: 57px;
+        }
+
+        #searchBox{
+            width: 488px;
+            height: 57px;
+            left: 645px;
+            top: 115px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        #search-text{
+            width: 128px;
+            left: 675px;
+            top: 125px;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #search-icon{
+            width: 31px;
+            left: 1083px;
+            top: 126px;
+        }
+
+        #house{
+            width: 78px;
+            left: 1163px;
+            top: 117px;
+        }
+
+        #about-us{
+            width: 128px;
+            left: 1252px;
+            top: 108px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #title{
+            width: 1092px;
+            left: 191px;
+            top: 449px; 
+            font-size: 60px;
+            line-height: 100px;
+            letter-spacing: 0.15em;
+            color: #FFFFFF;
+            /* vertical-align: text-bottom; */
+        }
+
+
+        #addComment-text{
+            width: 341px;
+            padding-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言區 */
+        .commentBox{
+            position: fixed;
+            background-image: url(img/comment-background.png);
+            background-size: cover;
+            width: 355px;
+            height: 109px;
+            left: 1064px;
+            top: 542px;
+        }
+
+        /* 按一下留言區放大 */
+        /* #biggerCommentBox{
+            position: fixed;
+            width: 349px;
+            height: 280px;
+            left: 1071px;
+            top: 371px;
+            background-size: cover;
+            font-size: 0px;
+            background-image:url(img/biggercommentbox.png); 
+        }*/
+
+        /* 輸入欄 */
+        #textarea {
+            width: 250px;
+            background: transparent;
+            resize: none;
+            border: none;
+            padding: 25px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 送出鍵 */
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言 */
+        li {
+            position: relative;
+            word-break: break-all;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+            color: white;
+        }
+
+        .red {
+            padding: 54px 80px 92px 62px;
+            background-image: url(img/comment1-1.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width:300px;
+            height: 298px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        } 
+        .pink {
+            padding: 60px 60px 117px 90px;
+            background-image: url(img/comment2.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width: 300px;
+            height: 370px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 1010px;
+            top: 1599px;
+        }
+
+        /* metadata */
+        #metadataBackground{
+            width: 417px;
+            height: 342.5px;
+            left: 976px;
+            top: 651px;
+            filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .red-words{
+            width: 261.65px;
+            height: 42.26px;
+            left: 1046.11px;
+            top: 707.71px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+
+            color: #968034;
+        }
+
+        .tags{
+            width: 88px;
+            height: 36px;
+            left: 1088px;
+            top: 816px;
+            font-size: 24px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        .circle{
+            height: 78px;
+            width: 78px;
+            left: 74px;
+            top: 833px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #fb-icon{
+            width: 39px;
+            height: 38px;
+            left: 20px;
+            top: 20px;
+        }
+
+        #line-icon{
+            left: 16px;
+            top: 18px;
+            width: 46px;
+            height: 41px;
+        }
+
+        #twitter-icon{
+            left: 17px;
+            top: 23px;
+            width: 45px;
+            height: 33px;
+        }
+
+        #top-section{
+            width: 976px;
+            height: 394.13px;
+            left: 0px;
+            top: 1025px;
+        }
+
+        #bottom-section{
+            width: 976px;
+            height: 541.43px;
+            left: 0px;
+            top: 5203px;
+        }
+
+        #article-background{
+            width: 976px;
+            height: 3785px;
+            left: 0px;
+            top: 1419px;
+
+            background: #F4F4F4;
+        }
+
+        .text{
+            left:103px;
+            width: 770px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-section{
+            width: 838px;
+            height: 138px;
+            left: 70px;
+        }
+
+        .quote-start{
+            width: 133px;
+            height: 101px;
+            left: 0px;
+            top: 0px;
+        }
+
+        .quote-end{
+            width: 133px;
+            height: 101px;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .quote-text{
+            width: 490px;
+            left: 174px;
+            top: auto;
+            bottom: auto;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+
+            color: #C7B165;
+        }
+
+        .pic-section{
+            width: 792px;
+            height: 596px;
+            left: 94px;
+            top: 245px;
+        }
+
+        .picture{
+            width: 751px;
+            height: 468px;
+            left: 19px;
+            top: 18px;
+        }
+
+        .pic-text{
+            height: 61px;
+            left: 19px;
+            right: 379px;
+            top: 508px;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #9C9C9C;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .pic-line{
+            width: 394px;
+            height: 0px;
+            left: 19px;
+            top: 583px;
+
+            border-top: 2px solid #C7B165;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body style="width: 1446px; height: 6649px; background: #9E4040;">
+
+    <div>
+        <img src="img/Logo.png" id="logo">
+        <img src="img/chanews.png" id="chanews">
+        <div>
+            <p id="search-text">Search</p>
+            <img id="search-icon" src="img/search-icon.png">
+            <div id="searchBox"></div>
+        </div>
+        <a href="three-dots.html">
+            <img src="img/house-red.png" id="house">
+        </a>
+        <a href="about-us.html" style="text-decoration:none">
+            <p id="about-us">About<br>us</p>
+        </a>
+    </div>
+    <div>
+        <img id="titleBackground" src="img/title-background.png">
+        <p id="title">捍衛校園民主　東華呼籲立委表態挺港</p>
+    </div>
+
+    <!-- 留言們 -->
+    <ul id="list"></ul>
+
+    <!-- 作者與日期等 -->
+    <div>
+        <img src="img/metadata-background-yellow.png" id="metadataBackground">
+        <p class="red-words">2019/11/20</p>
+        <p class="red-words" style="width: 172.36px; height: 36.7px; left: 1046.18px; top: 752.19px;">文| 李昱亭</p>
+        <p class="tags">#校園</p>
+        <p class="tags" style="left: 1060px; top: 861px; width: 123.43px;">#學生會</p>
+        <p class="tags" style="left: 1213px; width: 159.02px;">#東華大學</p>
+        <p class="tags" style="left:1213px; top: 861px; width: 161px;">#民主自由</p>
+    </div>
+
+    <!-- share -->
+    <div class="circle">
+        <img id="fb-icon" src="img/fb.png">
+    </div>
+
+    <div class="circle" style="left: 173px;">
+        <img id="line-icon" src="img/line.png">
+    </div>
+
+    <div class="circle"  style="left: 272px;">
+        <img id="twitter-icon" src="img/twitter.png">
+    </div>
+
+    <!-- 文章區 -->
+    <img id="top-section" src="img/top.png">
+    <div id="article-background">
+        <p class="text" style="top: 0px;">自11日起，香港多所大學發生的警民衝突引發外界關注。對此，國立東華大學學生會於14日中午在東華湖畔餐廳前廣場發起集會，以聲援香港大學生與香港校園民主自由，同時東華學生會呼籲全台各地立委候選人積極出面表態自身立場，藉此讓選民了解候選人對該事件的看法。</p>
+        <p class="text" style="top: 1221px;">「若自身校園發生相同情況，我們要確認立委候選人的立場為何。」東華社會學系學生、臺灣學生聯合會（以下簡稱臺學聯）理事、東華學生會會長許冠澤表示，從6月香港反送中事件至今五個多月以來，台灣已有多場聲援香港的活動，東華校園內也辦過連儂牆、連儂車及多場相關講座，但還未正式公開鼓勵全台立委候選人說明自身立場。因此許冠澤希望東華與臺學聯合作，呼籲全台各地立委候選人出面表態，讓選民檢視並選出能保護校園民主的候選人。</p>
+        <p class="text" style="top: 2261px;">受邀至集會的東華社會系學生、東華學生議會代表劉俊良表示，自己為校園民主被侵犯的香港大學生感到心痛，他坦言，若自己身處相同環境，不一定有勇氣起身反抗。劉俊良也認為，立委候選人的表態非常重要，「關係到（候選人）與選民是否有相同理念，並盡到代議士的責任。」</p>
+        <p class="text" style="top: 2482px;">東華社會系學生方詩閔雖然未參與集會，但認同集會理念。方詩閔指出，一般民眾影響力有限，由政治人物出面才能鼓勵其他非同溫層的人重視此議題。「希望政治人物不只是出面表態，而是促進溝通與討論。」有參與集會，東華社會系、港籍學生甯畋俊建議，政治人物除表達立場外，更重要的是了解如何與立場相左的人溝通討論，讓更多人關注香港近況。</p>
+        <p class="text" style="top: 3458px;">目前花蓮民主進步黨立委候選人蕭美琴，與中國國民黨立委候選人黃啟嘉，皆發表聲援香港校園民主自治的聲明。而臺學聯15日也在臉書發布公告表示，將於12月舉辦2020大選大學生模擬投票活動，屆時將把「反送中立場」納入候選人及政黨的的基本資料裡。許冠澤說明，此規劃目的是希望藉由臺學聯的影響力，呼籲全台立委候選人出面說明對於香港反送中的立場，提供大學生明年選舉更多元的考慮面向。</p>
+        
+        <div class="quote-section" style="top: 961px;">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">一般民眾影響力有限，由政治人物出面才能鼓勵其他非同溫層的人重視此議題。「希望政治人物不只是出面表態，而是促進溝通與討論。」</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+
+        <div class="pic-section">
+            <img class="picture" src="img/img-democracy-1.png">
+            <p class="pic-text">國立東華大學學生會在集會當日除安排記者會外，還開直播邀請沒機會到現場的同學一同關注。　圖／國立東華大學學生會提供</p>
+            <div class="pic-line"></div>
+        </div> 
+
+        <div class="pic-section" style="top: 1550px;">
+            <img class="picture" src="img/img-democracy-2.png">
+            <p class="pic-text">集會後，國立東華大學學生會透過記者會向全台立委候選人喊話，希望他們出面表態達自身立場。　圖／國立東華大學學生會提供</p>
+            <div class="pic-line"></div>
+        </div> 
+
+        <div class="pic-section" style="top: 2798px;">
+            <img class="picture" src="img/img-democracy-3.png">
+            <p class="pic-text">雖然集會中多為學生會成員，但周遭也逐漸聚集對議題同樣關心的學生。　圖／國立東華大學學生會提供</p>
+            <div class="pic-line"></div>
+        </div> 
+
+    </div>
+    <img id="bottom-section" src="img/bottom.png">
+
+    <div class="commentBox">
+        <textarea id="textarea">add comment</textarea>
+        <button type="button">+</button>
+        <!-- <div id="commentBox" onclick="bigger()">add comment +</div> -->
+    </div>
+
+    <!-- 引用javascripts的檔案 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
