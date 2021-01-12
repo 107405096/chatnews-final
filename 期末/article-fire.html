@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 清除瀏覽器預設的風格 -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+	<!-- 載入思源黑體 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        div, p, img, a{
+            box-sizing: border-box
+        }
+
+        p{
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 900;
+            text-align: justify;
+            color: #464646;
+            line-height: 33px;
+
+        }
+
+
+        #titleBackground{
+            position: absolute;
+            width: 1298px;
+            left: 74px;
+            top: 342px;
+            filter: drop-shadow(-4px 8px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #logo{
+            position: absolute;
+            width: 191px;
+            left: 73px;
+            top: 80px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #chanews{
+            position: absolute;
+            width: 265px;
+            height: 178px;
+            left: 247px;
+            top: 57px;
+        }
+
+        #searchBox{
+            position: absolute;
+            width: 488px;
+            height: 57px;
+            left: 645px;
+            top: 115px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        #search-text{
+            position: absolute;
+            width: 128px;
+            left: 675px;
+            top: 125px;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #search-icon{
+            position: absolute;
+            width: 31px;
+            left: 1083px;
+            top: 126px;
+        }
+
+        #house{
+            position: absolute;
+            width: 78px;
+            left: 1163px;
+            top: 117px;
+        }
+
+        #about-us{
+            position: absolute;
+            width: 128px;
+            left: 1252px;
+            top: 108px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #title{
+            position: absolute;
+            width: 1092px;
+            left: 191px;
+            top: 449px; 
+            font-size: 60px;
+            line-height: 100px;
+            letter-spacing: 0.15em;
+            color: #FFFFFF;
+            /* vertical-align: text-bottom; */
+        }
+
+
+        #addComment-text{
+            width: 341px;
+            padding-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言區 */
+        .commentBox{
+            position: fixed;
+            background-image: url(img/comment-background.png);
+            background-size: cover;
+            width: 355px;
+            height: 109px;
+            left: 1064px;
+            top: 542px;
+        }
+
+        /* 按一下留言區放大 */
+        /* #biggerCommentBox{
+            position: fixed;
+            width: 349px;
+            height: 280px;
+            left: 1071px;
+            top: 371px;
+            background-size: cover;
+            font-size: 0px;
+            background-image:url(img/biggercommentbox.png); 
+        }*/
+
+        /* 輸入欄 */
+        #textarea {
+            width: 250px;
+            background: transparent;
+            resize: none;
+            border: none;
+            padding: 25px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 送出鍵 */
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言 */
+        li {
+            position: relative;
+            word-break: break-all;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+            color: white;
+        }
+
+        .red {
+            padding: 54px 80px 92px 62px;
+            background-image: url(img/comment1.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width:300px;
+            height: 298px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        } 
+        .pink {
+            padding: 60px 60px 117px 90px;
+            background-image: url(img/comment2.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width: 300px;
+            height: 370px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 1010px;
+            top: 1599px;
+        }
+
+        /* metadata */
+        #metadataBackground{
+            position: absolute;
+            width: 417px;
+            height: 342.5px;
+            left: 976px;
+            top: 651px;
+            filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .red-words{
+            position: absolute;
+            width: 261.65px;
+            height: 42.26px;
+            left: 1046.11px;
+            top: 707.71px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+
+            color: #9E4040;
+        }
+
+        #tags-section{
+            display: flex;
+            position: absolute;
+            width: 310px;
+            height: 85px;
+            left: 1040px;
+            top: 813px;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+
+        }
+
+        .tag{
+            /* position: absolute; */
+            width: 150px;
+            height: 36.7px;
+            /* left: 1023.94px;
+            top: 815.58px; */
+            font-size: 24px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        .circle{
+            position: absolute;
+            height: 78px;
+            width: 78px;
+            left: 74px;
+            top: 833px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #fb-icon{
+            position: absolute;
+            width: 39px;
+            height: 38px;
+            left: 20px;
+            top: 20px;
+        }
+
+        #line-icon{
+            position: absolute;
+            left: 16px;
+            top: 18px;
+            width: 46px;
+            height: 41px;
+        }
+
+        #twitter-icon{
+            position: absolute;
+            left: 17px;
+            top: 23px;
+            width: 45px;
+            height: 33px;
+        }
+
+        #top-section{
+            position: absolute;
+            width: 976px;
+            height: 394.13px;
+            left: 0px;
+            top: 1025px;
+        }
+
+        #bottom-section{
+            position: absolute;
+            width: 976px;
+            height: 541.43px;
+            left: 0px;
+            top: 5315px;
+        }
+
+        #article-background{
+            position: absolute;
+            display: flex;
+            width: 976px;
+            height: 3900px;
+            left: 0px;
+            top: 1418px;
+            background: #F4F4F4;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .text{
+            left:103px;
+            width: 770px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-section{
+            display:flex;
+            width: 838px;
+            height: 138px;
+            justify-content: space-between;
+            align-items: center;
+            /* left: 70px; */
+        }
+
+        .quote-start{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* left: 0px;
+            top: 0px; */
+        }
+
+        .quote-end{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* bottom: 0px;
+            right: 0px; */
+        }
+
+        .quote-text{
+            /* position: absolute; */
+            width: 490px;
+            /* left: 174px;
+            top: auto;
+            bottom: auto; */
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+
+            color: #C7B165;
+        }
+
+        .pic-section{
+            display: flex;
+            width: 792px;
+            height: 596px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            /* left: 94px;
+            top: 245px */
+        }
+
+        .picture{
+            width: 751px;
+            height: 468px;
+            /* left: 19px;
+            top: 18px; */
+            object-fit: cover;
+        }
+
+        .pic-text{
+            height: 61px;
+            Width: 394px;
+            /* left: 19px;
+            right: 379px;
+            top: 508px; */
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #9C9C9C;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .pic-line{
+            width: 394px;
+            height: 0px;
+            /* left: 19px;
+            top: 583px; */
+            border-top: 2px solid #C7B165;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body style="width: 1446px; height: 6649px; background: #DFBD43;">
+
+    <div>
+        <img src="img/Logo-yellow.png" id="logo">
+        <img src="img/chanews.png" id="chanews">
+        <div>
+            <p id="search-text">Search</p>
+            <img id="search-icon" src="img/search-icon.png">
+            <div id="searchBox"></div>
+        </div>
+        <a href="three-dots.html">
+            <img src="img/house.png" id="house">
+        </a>
+        <a href="about-us.html" style="text-decoration:none">
+            <p id="about-us">About<br>us</p>
+        </a>
+    </div>
+    <div>
+        <img id="titleBackground" src="img/title-background.png">
+        <p id="title">野火頻傳　玻大生為森林上街</p>
+    </div>
+
+    <!-- 留言們 -->
+    <ul id="list"></ul>
+
+    <!-- 作者與日期等 -->
+    <div>
+        <img src="img/metadata-background.png" id="metadataBackground">
+        <p class="red-words">2019/09/26</p>
+        <p class="red-words" style="width: 172.36px; height: 36.7px; left: 1046.18px; top: 752.19px;">文| 李芸</p>
+        <div id="tags-section">
+            <p class="tag">#國際</p>
+            <p class="tag">#玻利維亞</p>
+            <p class="tag">#氣候</p>
+            <p class="tag">#森林大火</p>
+        </div>
+    </div>
+
+    <!-- share -->
+    <div class="circle">
+        <img id="fb-icon" src="img/fb.png">
+    </div>
+
+    <div class="circle" style="left: 173px;">
+        <img id="line-icon" src="img/line.png">
+    </div>
+
+    <div class="circle"  style="left: 272px;">
+        <img id="twitter-icon" src="img/twitter.png">
+    </div>
+
+    <!-- 文章區 -->
+    <img id="top-section" src="img/top.png">
+    <div id="article-background">
+
+        <p class="text">「我們的未來正在燃燒！」20日玻利維亞青年響應「未來星期五（Fridays for future）」（註1），集體罷課走上街頭，為國內嚴重的森林大火發聲。學生將廢紙板、舊課本回收再利用，畫上燃燒的森林製成標語，高舉上街。群眾臉上彩繪了玻利維亞國旗的紅、黃、綠色，將耳熟能詳的歌詞改寫成環境問題，一邊歌唱一邊前行。青年領袖也於廣場發表激昂演說，其中有一名小女孩更以一語震驚群眾，「我很害怕在大家面前講話，但是失去未來更令我恐懼。」</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-fire-1.jpg">
+            <p class="pic-text">學生將廢棄的舊紙板回收再利用，製作成遊行標語板，不浪費地球資源。　圖／艾琳．賽哥維雅提供</p>
+            <div class="pic-line"></div>
+        </div>
+        <p class="text">今年八月起，亞馬遜森林多處起火，火災異常頻繁的次數引發國際關注。據調查這幾波大火可能是「人禍」造成，但當地政府卻拒絕積極處理。除了大家熟知的巴西，玻利維亞東部聖塔克魯斯省的奇基塔尼亞地區也受到野火嚴重侵襲，目前已有超過400萬公頃的土地受火災破壞。火災嚴重污染周邊地區的水質和空氣，居民被迫搬離家園。就讀聖塔克魯斯私立大學（Santa Cruz de la Sierra Private University, UPSA）的艾琳．賽哥維雅（Irene Segovia）所居住的城市雖在火場270公里之外，但濃煙依舊覆蓋天空，甚至灼傷了他的眼睛。「諷刺的是，我們的國歌開頭是『在美洲最清澈的天空之下。』」他感慨說道。</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-fire-2.jpg">
+            <p class="pic-text">消防員第一線對抗大火，但因資源不足只能以有限的裝備與火拼搏，身曝危險之中。　圖／取自Alas Chiquitanas Voluntarios(志願者之翼)臉書粉專</p>
+            <div class="pic-line"></div>
+        </div>
+        <p class="text">就讀巴拉格學院（Balaguer Institute）的學生安娜（化名）描述20日當天遊行狀況，眾人在大街上席地而坐、一同歌唱，領頭的學生則向大家解釋目前國內火災延燒的規模。儘管活動場面溫和，無發生任何衝突，卻遭到官方反對。當天早上政府就封閉了重鎮拉巴斯的主要廣場和周邊街道，群眾只能轉往學生廣場集會遊行。到了下午，玻利維亞政府更出動武裝警察，強制驅離遊行的群眾。「政府不想要讓世界知道這裡發生了什麼事。」安娜說。她認為政府故意趁著下午媒體撤離後行動，避開曝光的可能，同時也為掩蓋森林大火是玻利維亞總統埃沃・莫拉萊斯（Evo Morales）「允許砍伐森林」的政策所造成的事實。</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-fire-3.jpg">
+            <p class="pic-text">學生高舉寫著「我們的未來正在燃燒」的標語，畫上燃燒的森林，希望引發群眾關注森林大火。　圖／艾琳．賽哥維雅提供</p>
+            <div class="pic-line"></div>
+        </div>
+        <p class="text">政府的沉默使國民絕望，居民眼見家鄉森林被火吞噬卻無能為力，僅穿著夾腳拖、拿著瓶裝水就朝火源奔去，想拯救家園。學生也設法透過各式行動爭取援助，拉巴斯的德國學校（Deutsche Schule La Paz）學生會議也於20日參與遊行。會議領袖卡塔利娜・斯瓦斯歐（Catalina Zuazo）表示，森林大火的影響無法估計，但這關乎了全世界的未來，「廣為宣傳這場國家災難，換來國際救援」是最重要的目的，因而籌劃了此次行動。</p>
+        <p class="text">除了遊行之外，學生也透過各種行動拯救森林。賽哥維雅提到，有人開始在網路上向大眾募資，也有人提供食物、水和物資，再由義工運往災區。「玻利維亞人們一直以來都很緊密，但現在更甚以往。」賽哥維雅欣慰地說。儘管野火持續燃燒，遊行已落幕，面對政府的冷漠處理，學生們仍竭力付出，展現行動力。</p>
+    </div>
+    <img id="bottom-section" src="img/bottom.png">
+
+    <div class="commentBox">
+        <textarea id="textarea">add comment</textarea>
+        <button type="button">+</button>
+        <!-- <div id="commentBox" onclick="bigger()">add comment +</div> -->
+    </div>
+
+    <!-- 引用javascripts的檔案 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
