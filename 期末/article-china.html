@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 清除瀏覽器預設的風格 -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+	<!-- 載入思源黑體 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        div, p, img, a{
+            box-sizing: border-box
+        }
+
+        p{
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 900;
+            text-align: justify;
+            color: #464646;
+            line-height: 33px;
+
+        }
+
+
+        #titleBackground{
+            position: absolute;
+            width: 1298px;
+            left: 74px;
+            top: 342px;
+            filter: drop-shadow(-4px 8px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #logo{
+            position: absolute;
+            width: 191px;
+            left: 73px;
+            top: 80px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #chanews{
+            position: absolute;
+            width: 265px;
+            height: 178px;
+            left: 247px;
+            top: 57px;
+        }
+
+        #searchBox{
+            position: absolute;
+            width: 488px;
+            height: 57px;
+            left: 645px;
+            top: 115px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        #search-text{
+            position: absolute;
+            width: 128px;
+            left: 675px;
+            top: 125px;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #search-icon{
+            position: absolute;
+            width: 31px;
+            left: 1083px;
+            top: 126px;
+        }
+
+        #house{
+            position: absolute;
+            width: 78px;
+            left: 1163px;
+            top: 117px;
+        }
+
+        #about-us{
+            position: absolute;
+            width: 128px;
+            left: 1252px;
+            top: 108px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #title{
+            position: absolute;
+            width: 1092px;
+            left: 191px;
+            top: 449px; 
+            font-size: 60px;
+            line-height: 100px;
+            letter-spacing: 0.15em;
+            color: #FFFFFF;
+            /* vertical-align: text-bottom; */
+        }
+
+
+        #addComment-text{
+            width: 341px;
+            padding-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言區 */
+        .commentBox{
+            position: fixed;
+            background-image: url(img/comment-background.png);
+            background-size: cover;
+            width: 355px;
+            height: 109px;
+            left: 1064px;
+            top: 542px;
+        }
+
+        /* 按一下留言區放大 */
+        /* #biggerCommentBox{
+            position: fixed;
+            width: 349px;
+            height: 280px;
+            left: 1071px;
+            top: 371px;
+            background-size: cover;
+            font-size: 0px;
+            background-image:url(img/biggercommentbox.png); 
+        }*/
+
+        /* 輸入欄 */
+        #textarea {
+            width: 250px;
+            background: transparent;
+            resize: none;
+            border: none;
+            padding: 25px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 送出鍵 */
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言 */
+        li {
+            position: relative;
+            word-break: break-all;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+            color: white;
+        }
+
+        .red {
+            padding: 54px 80px 92px 62px;
+            background-image: url(img/comment1-1.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width:300px;
+            height: 298px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        } 
+        .pink {
+            padding: 60px 60px 117px 90px;
+            background-image: url(img/comment2.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width: 300px;
+            height: 370px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 1010px;
+            top: 1599px;
+        }
+
+        /* metadata */
+        #metadataBackground{
+            position: absolute;
+            width: 417px;
+            height: 342.5px;
+            left: 976px;
+            top: 651px;
+            filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .red-words{
+            position: absolute;
+            width: 261.65px;
+            height: 42.26px;
+            left: 1046.11px;
+            top: 707.71px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+
+            color: #968034;
+        }
+
+        #tags-section{
+            display: flex;
+            position: absolute;
+            width: 310px;
+            height: 85px;
+            left: 1040px;
+            top: 813px;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+
+        }
+
+        .tag{
+            /* position: absolute; */
+            width: 150px;
+            height: 36.7px;
+            /* left: 1023.94px;
+            top: 815.58px; */
+            font-size: 24px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        .circle{
+            position: absolute;
+            height: 78px;
+            width: 78px;
+            left: 74px;
+            top: 833px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #fb-icon{
+            position: absolute;
+            width: 39px;
+            height: 38px;
+            left: 20px;
+            top: 20px;
+        }
+
+        #line-icon{
+            position: absolute;
+            left: 16px;
+            top: 18px;
+            width: 46px;
+            height: 41px;
+        }
+
+        #twitter-icon{
+            position: absolute;
+            left: 17px;
+            top: 23px;
+            width: 45px;
+            height: 33px;
+        }
+
+        #top-section{
+            position: absolute;
+            width: 976px;
+            height: 394.13px;
+            left: 0px;
+            top: 1025px;
+        }
+
+        #bottom-section{
+            position: absolute;
+            width: 976px;
+            height: 541.43px;
+            left: 0px;
+            top: 5315px;
+        }
+
+        #article-background{
+            position: absolute;
+            display: flex;
+            width: 976px;
+            height: 3900px;
+            left: 0px;
+            top: 1418px;
+            background: #F4F4F4;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .text{
+            left:103px;
+            width: 770px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-section{
+            display:flex;
+            width: 838px;
+            height: 138px;
+            justify-content: space-between;
+            align-items: center;
+            /* left: 70px; */
+        }
+
+        .quote-start{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* left: 0px;
+            top: 0px; */
+        }
+
+        .quote-end{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* bottom: 0px;
+            right: 0px; */
+        }
+
+        .quote-text{
+            /* position: absolute; */
+            width: 490px;
+            /* left: 174px;
+            top: auto;
+            bottom: auto; */
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+
+            color: #C7B165;
+        }
+
+        .pic-section{
+            display: flex;
+            width: 792px;
+            height: 596px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            /* left: 94px;
+            top: 245px */
+        }
+
+        .picture{
+            width: 751px;
+            height: 468px;
+            /* left: 19px;
+            top: 18px; */
+            object-fit: cover;
+        }
+
+        .pic-text{
+            height: 61px;
+            Width: 394px;
+            /* left: 19px;
+            right: 379px;
+            top: 508px; */
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #9C9C9C;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .pic-line{
+            width: 394px;
+            height: 0px;
+            /* left: 19px;
+            top: 583px; */
+            border-top: 2px solid #C7B165;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body style="width: 1446px; height: 6649px; background: #4BAB77;">
+
+    <div>
+        <img src="img/Logo-yellow.png" id="logo">
+        <img src="img/chanews.png" id="chanews">
+        <div>
+            <p id="search-text">Search</p>
+            <img id="search-icon" src="img/search-icon.png">
+            <div id="searchBox"></div>
+        </div>
+        <a href="three-dots.html">
+            <img src="img/house-green.png" id="house">
+        </a>
+        <a href="about-us.html" style="text-decoration:none">
+            <p id="about-us">About<br>us</p>
+        </a>
+    </div>
+    <div>
+        <img id="titleBackground" src="img/title-background.png">
+        <p id="title">碩博師生不睦致憾事　中國訂十「不得」互動準則</p>
+    </div>
+
+    <!-- 留言們 -->
+    <ul id="list"></ul>
+
+    <!-- 作者與日期等 -->
+    <div>
+        <img src="img/metadata-background-yellow.png" id="metadataBackground">
+        <p class="red-words">2020/12/03</p>
+        <p class="red-words" style="width: 172.36px; height: 36.7px; left: 1046.18px; top: 752.19px;">文| 周佩怡</p>
+        <div id="tags-section">
+            <p class="tag">#中國</p>
+            <p class="tag">#師生關係</p>
+            <p class="tag">#研究生</p>
+            <p class="tag">#自殺</p>
+        </div>
+    </div>
+
+    <!-- share -->
+    <div class="circle">
+        <img id="fb-icon" src="img/fb.png">
+    </div>
+
+    <div class="circle" style="left: 173px;">
+        <img id="line-icon" src="img/line.png">
+    </div>
+
+    <div class="circle"  style="left: 272px;">
+        <img id="twitter-icon" src="img/twitter.png">
+    </div>
+
+    <!-- 文章區 -->
+    <img id="top-section" src="img/top.png">
+    <div id="article-background">
+
+        <p class="text">近年中國研究生與導師關係不佳而自殺的事件頻傳。中國教育部11日為此頒布包含十個「不得」的《研究生導師指導行為準則》，明確規定導師行為，盼解決目前師生關係不睦的問題。多數民眾對此表示贊成，但也點出舉報方式、確切罰則不明的缺漏。</p>
+        <div class="quote-section">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">中國教育部新聞稿提到，「導師是研究生培養的第一負責人」，本應為國家作育人才，卻有部分導師未善盡職責，導致研究生壓力過大而自殺。</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+        <p class="text">準則針對導師行為，從正確履行指導職責、精心盡力投入指導、嚴格遵守學術規範等八個面向，提出「不得對研究生的學業進程及面臨的學業問題疏於監督和指導」、「不得要求研究生從事與學業、科研、社會服務無關的事務」、「不得違規隨意拖延研究生畢業時間」、「不得侮辱研究生人格」等十個「不得」。中國教育部新聞稿提到，「導師是研究生培養的第一負責人」，本應為國家作育人才，卻有部分導師未善盡職責，導致研究生壓力過大而自殺。</p>
+        <img class="picture" src="img/img-china-1.png" style="object-fit: contain;">
+        <p class="text">根據《香港01》報導，一名大連理工大學研究生於10月13日自縊身亡。他在遺書中提到老師上課品質極差，論文進度停滯不前，老師又鮮少關心自己，不但使研究生涯空轉，也讓他面臨身心壓力。無獨有偶，5月9日中國傳媒大學動畫與數字藝術學院碩士生黃靜怡墜樓身亡，家屬發文指控其導師百般刁難、不同意送審畢業論文。即使黃靜怡苦苦哀求仍不理不睬，造成他精神逐漸崩潰，出現幻覺、幻聽，最終發生悲劇。另一起研究生自殺事件發生於2019年聖誕節，南京郵電大學材料科學與工程學院張姓研究生長期被導師謾罵壓榨、羞辱人格，導致重度憂鬱。事發當日，導師拒絕批改論文，並強逼他簽署延期畢業承諾書，甚至要求賠償不合理的實驗費用，致使該生選擇在實驗室以一把火結束自己年輕的生命。而類似事件還有許多⋯⋯。</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-china-2.jpg">
+            <p class="pic-text">老師作為與學生相處的第一線，除了肩負教學、研究的職責，更須與學生建立良好的師生關係。　圖／周佩怡攝</p>
+            <div class="pic-line"></div>
+        </div> 
+        <p class="text">相較上述案例遭受的待遇，中國政法大學研究生張大強（化名）自認很幸運，他的導師時常關心學生的學習與生活，每個月的導生聚更會邀請學長姐分享經驗，師生關係和睦，相處融洽。北京大學教育學院院長閻鳳橋以自身經驗分享，他除了與研究生建立良好的溝通管道，也會主動關切他們的身心狀況和學業。他表示自己鮮少與學生發生嚴重摩擦，至多曾因研究生論文進度不佳而顯得急躁，但事後自我檢討道：「我們都是從年輕走過來的，自己當時不也存在著類似的問題嗎？」</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-china-3.jpg">
+            <p class="pic-text">中國近年頻傳學生因師生關係不睦而自殺的新聞，顯示師生關係也是學生就學期間重視的元素。圖為示意圖。　圖／周佩怡攝</p>
+            <div class="pic-line"></div>
+        </div> 
+        <p class="text">違反準則的導師，中國教育部將依據《教育部關於高校教師師德失范行為處理的指導意見》等相關規定，約談、限制招生名額、停止招生資格、取消導師資格，同時亦將問責院系所乃至整個學校。中國政法大學研究生凌小莉（化名）認為準則內容過於概括，沒有明確的判斷標準，可能讓不良導師有可趁之機。他也指出目前準則只是效力層級較低的部門文件，建議進一步立法。閻鳳橋則表示教育部制定的是原則性準則，僅能提供大方向，但大學都有相應的申訴管道及管理細則。他也補充，準則的頒布代表確實存在有問題的師生關係，期盼藉此改善研究所師生關係，形成有利學生成長和發展的環境。</p>
+
+    </div>
+    <img id="bottom-section" src="img/bottom.png">
+
+    <div class="commentBox">
+        <textarea id="textarea">add comment</textarea>
+        <button type="button">+</button>
+        <!-- <div id="commentBox" onclick="bigger()">add comment +</div> -->
+    </div>
+
+    <!-- 引用javascripts的檔案 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>

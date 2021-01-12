@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 清除瀏覽器預設的風格 -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+	<!-- 載入思源黑體 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        div, p, img, a{
+            position: absolute;
+            box-sizing: border-box
+        }
+
+        p{
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 900;
+            text-align: justify;
+            color: #464646;
+            line-height: 33px;
+
+        }
+
+
+        #titleBackground{
+            width: 1298px;
+            left: 74px;
+            top: 342px;
+            filter: drop-shadow(-4px 8px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #logo{
+            width: 191px;
+            left: 73px;
+            top: 80px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #chanews{
+            width: 265px;
+            height: 178px;
+            left: 247px;
+            top: 57px;
+        }
+
+        #searchBox{
+            width: 488px;
+            height: 57px;
+            left: 645px;
+            top: 115px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        #search-text{
+            width: 128px;
+            left: 675px;
+            top: 125px;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #search-icon{
+            width: 31px;
+            left: 1083px;
+            top: 126px;
+        }
+
+        #house{
+            width: 78px;
+            left: 1163px;
+            top: 117px;
+        }
+
+        #about-us{
+            width: 128px;
+            left: 1252px;
+            top: 108px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #title{
+            width: 1092px;
+            left: 191px;
+            top: 449px; 
+            font-size: 60px;
+            line-height: 100px;
+            letter-spacing: 0.15em;
+            color: #FFFFFF;
+            /* vertical-align: text-bottom; */
+        }
+
+
+        #addComment-text{
+            width: 341px;
+            padding-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言區 */
+        .commentBox{
+            position: fixed;
+            background-image: url(img/comment-background.png);
+            background-size: cover;
+            width: 355px;
+            height: 109px;
+            left: 1064px;
+            top: 542px;
+        }
+
+        /* 按一下留言區放大 */
+        /* #biggerCommentBox{
+            position: fixed;
+            width: 349px;
+            height: 280px;
+            left: 1071px;
+            top: 371px;
+            background-size: cover;
+            font-size: 0px;
+            background-image:url(img/biggercommentbox.png); 
+        }*/
+
+        /* 輸入欄 */
+        #textarea {
+            width: 250px;
+            background: transparent;
+            resize: none;
+            border: none;
+            padding: 25px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 送出鍵 */
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言 */
+        li {
+            position: relative;
+            word-break: break-all;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+            color: white;
+        }
+
+        .red {
+            padding: 54px 80px 92px 62px;
+            background-image: url(img/comment1-1.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width:300px;
+            height: 298px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        } 
+        .pink {
+            padding: 60px 60px 117px 90px;
+            background-image: url(img/comment2.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width: 300px;
+            height: 370px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 1010px;
+            top: 1599px;
+        }
+
+        /* metadata */
+        #metadataBackground{
+            width: 417px;
+            height: 342.5px;
+            left: 976px;
+            top: 651px;
+            filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .red-words{
+            width: 261.65px;
+            height: 42.26px;
+            left: 1046.11px;
+            top: 707.71px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+
+            color: #968034;
+        }
+
+        .tags{
+            width: 176.81px;
+            height: 36.7px;
+            left: 1023.94px;
+            top: 815.58px;
+            font-size: 24px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        .circle{
+            height: 78px;
+            width: 78px;
+            left: 74px;
+            top: 833px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #fb-icon{
+            width: 39px;
+            height: 38px;
+            left: 20px;
+            top: 20px;
+        }
+
+        #line-icon{
+            left: 16px;
+            top: 18px;
+            width: 46px;
+            height: 41px;
+        }
+
+        #twitter-icon{
+            left: 17px;
+            top: 23px;
+            width: 45px;
+            height: 33px;
+        }
+
+        #top-section{
+            width: 976px;
+            height: 394.13px;
+            left: 0px;
+            top: 1025px;
+        }
+
+        #bottom-section{
+            width: 976px;
+            height: 541.43px;
+            left: 0px;
+            top: 6005px;
+        }
+
+        #article-background{
+            width: 976px;
+            height: 4605px;
+            left: 0px;
+            top: 1419px;
+            background: #F4F4F4;
+        }
+
+        .text{
+            left:103px;
+            width: 770px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-section{
+            width: 838px;
+            height: 138px;
+            left: 70px;
+        }
+
+        .quote-start{
+            width: 133px;
+            height: 101px;
+            left: 0px;
+            top: 0px;
+        }
+
+        .quote-end{
+            width: 133px;
+            height: 101px;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .quote-text{
+            width: 490px;
+            left: 174px;
+            top: auto;
+            bottom: auto;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+
+            color: #C7B165;
+        }
+
+        .pic-section{
+            width: 792px;
+            height: 596px;
+            left: 94px;
+            top: 245px
+        }
+
+        .picture{
+            width: 751px;
+            height: 468px;
+            left: 19px;
+            top: 18px;
+        }
+
+        .pic-text{
+            height: 61px;
+            left: 19px;
+            right: 379px;
+            top: 508px;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #9C9C9C;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .pic-line{
+            width: 394px;
+            height: 0px;
+            left: 19px;
+            top: 583px;
+
+            border-top: 2px solid #C7B165;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body style="width: 1446px; height: 6649px; background: #4BAB77;">
+
+    <div>
+        <img src="img/Logo-yellow.png" id="logo">
+        <img src="img/chanews.png" id="chanews">
+        <div>
+            <p id="search-text">Search</p>
+            <img id="search-icon" src="img/search-icon.png">
+            <div id="searchBox"></div>
+        </div>
+        <a href="three-dots.html">
+            <img src="img/house-green.png" id="house">
+        </a>
+        <a href="about-us.html" style="text-decoration:none">
+            <p id="about-us">About<br>us</p>
+        </a>
+    </div>
+    <div>
+        <img id="titleBackground" src="img/title-background.png">
+        <p id="title">交織跨國情感　接待家庭計畫迎文化碰撞</p>
+    </div>
+
+    <!-- 留言們 -->
+    <ul id="list"></ul>
+
+    <!-- 作者與日期等 -->
+    <div>
+        <img src="img/metadata-background-yellow.png" id="metadataBackground">
+        <p class="red-words">2020/12/03</p>
+        <p class="red-words" style="width: 172.36px; height: 36.7px; left: 1046.18px; top: 752.19px;">文| 周佩怡</p>
+        <p class="tags">#友善環境</p>
+        <p class="tags" style="left: 1060px; top: 861px; width: 123.43px;">#境外生</p>
+        <p class="tags" style="left: 1212.98px; width: 159.02px;">#接待家庭</p>
+        <p class="tags" style="left:1211px; top: 861px; width: 161px;">#文化交流</p>
+    </div>
+
+    <!-- share -->
+    <div class="circle">
+        <img id="fb-icon" src="img/fb.png">
+    </div>
+
+    <div class="circle" style="left: 173px;">
+        <img id="line-icon" src="img/line.png">
+    </div>
+
+    <div class="circle"  style="left: 272px;">
+        <img id="twitter-icon" src="img/twitter.png">
+    </div>
+
+    <!-- 文章區 -->
+    <img id="top-section" src="img/top.png">
+    <div id="article-background">
+        <p class="text" style="top: 0px;">「要是無法當天慶生，有些國家只能允許提前，有些國家只允許事後。」謝雪玉接待境外生已有七年，過程中他學習到許多台灣習俗與他國不同之處，他以慶生日期為例，「台灣過生日只會提前過，所以會問問境外生的意願，但還是希望他們盡量能入境隨俗。」像這樣的文化碰撞、交流，正是「友善台灣──境外學生接待家庭專案計畫」的目標。</p>
+        <p class="text" style="top: 1221px;">自民國99年規劃至今，「友善台灣──境外學生接待家庭專案計畫」是唯一由中央政府主辦的接待家庭計畫，專門接待大專院校境外生。不論境外生就讀時間長短，皆符合申請資格。與一般常見營利、長期共處的寄宿家庭不同，接待家庭計畫除個人開銷，家庭與境外生不必支付費用。此外，由於考量現代家庭平日作息，以及期望保留給境外生更多隱私與自由，計畫提倡學生平日住在宿舍，再利用假日與接待家庭相約出遊。國立臺灣大學化學系研究所的印度籍學生安南・普雷特（Anant Preet）認為計畫形式彈性又免費，預算有限的學生也能參與。且接待家庭不需親自打點境外生的大小事，因而減少他們的負擔。</p>
+        <p class="text" style="top: 2261px;">接待家庭需參與完整培訓課程，通過計畫審核才可以開始接待。家庭及學生透過網路、實體活動媒合，找尋興趣相近的對象。然而，層層關卡篩選仍無法保證配對成效。國立臺灣師範大學資訊工程學系的泰籍生何旭東提到，他上次與接待家庭配對後，僅偶爾與對方線上聊天，卻沒有實際相聚，「我只能一個人到處走走、閒逛。」</p>
+        <p class="text" style="top: 2482px;">雖然僅短期相處，有些接待家庭依然與境外生培養出深厚感情。接待逾30位學生中，謝雪玉與一位越南女學生情同母女。回憶起兩人相處的點滴，他眼眶泛紅地說：「我們感情真的很好，他會叫我媽咪，邀請我一起出遊、參加活動。」當兩人相識一年多時，謝雪玉因病接受治療，過程中頭髮漸漸掉落，越南生見狀，便毅然決然剪去一頭長髮，送給他訂製假髮。此舉深深感動謝雪玉，兩人現在仍保持聯絡。</p>
+        <p class="text" style="top: 3074px;">計畫推出至今並非一帆風順，計畫團隊多次碰壁。例如105年，計畫範圍從西部擴大至東部，讓境外生嘗試穿著傳統服飾射箭、圍圈高歌，體驗原住民文化。但是教育部「友善台灣──境外學生接待家庭專案計畫」全國計畫辦公室執行秘書許郁屏坦言成效不如預期，「交通是最大的阻礙，所以東部活動參加人數較少。」</p>
+        <p class="text" style="top: 3303px;">地理位置與交通不便不單造成學生困擾，接待家庭亦深受其擾，擔心自己是否會被境外生當成利用工具。去年加入計畫的花蓮接待家庭張筑聿表示，他會評估境外生是否有心融入家庭，「如果是那種把我們當成免費司機、民宿的人，那我就不會去接待。」他舉例，他曾拒絕同時向他申請接待的三位境外生，「這樣他們容易形成小圈圈，不會跟我們交流。」相較之下，都市地區交通發達，有利家庭與學生響應計畫活動，或私下聯合出遊。且都市的外國人較多，接待家庭習慣與外國人相處，心態較開放，與境外生相處也較為熱絡。</p>
+        <p class="text" style="top: 4320px;">配合新南向政策，計畫106年決定開放新住民家庭加入接待行列。然而，許郁屏無奈地說明，現在加入計畫的移民家庭較少，其中又以東南亞家庭為主，「未來會繼續努力增加新住民家庭的數量與多樣性。」此外，今年因應疫情影響，計畫加速數位化，除推出線上接待家庭培訓課程，之後更有意拍攝影片，向尚未來台的境外生宣傳台灣友善的環境。</p>
+
+        <div class="quote-section" style="top: 957px;">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">與一般常見營利、長期共處的寄宿家庭不同，接待家庭計畫除個人開銷，家庭與境外生不必支付費用。</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+
+        <div class="quote-section" style="top: 2827px;">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">地理位置與交通不便不單造成學生困擾，接待家庭亦深受其擾，擔心自己是否會被境外生當成利用工具。</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+
+        <div class="pic-section">
+            <img class="picture" src="img/img-culture-1.png">
+            <p class="pic-text">境外生們穿戴上傳統服飾及頭飾，一字排開站在招親台上合影，現場一片和樂融融。　圖／教育部「友善台灣──境外學生接待家庭專案計畫」全國計畫辦公室提供</p>
+            <div class="pic-line"></div>
+        </div> 
+
+        <div class="pic-section" style="top: 1608px;">
+            <img class="picture" src="img/img-culture-2.png">
+            <p class="pic-text">接待家庭與境外生跟著師傅的指導，將麵皮桿平、捲起、壓扁，增加鳳梨奶黃酥外皮的口感層次。　圖／教育部「友善台灣──境外學生接待家庭專案計畫」全國計畫辦公室提供</p>
+            <div class="pic-line"></div>
+        </div> 
+
+        <div class="pic-section" style="top: 3660px;">
+            <img class="picture" src="img/img-culture-3.png">
+            <p class="pic-text">郭元益糕餅博物館人員介紹台灣抓周文化，引起大家的興趣，紛紛拿起手機拍攝。 圖／教育部「友善台灣──境外學生接待家庭專案計畫」全國計畫辦公室提供</p>
+            <div class="pic-line"></div>
+        </div> 
+
+    </div>
+    <img id="bottom-section" src="img/bottom.png">
+
+    <div class="commentBox">
+        <textarea id="textarea">add comment</textarea>
+        <button type="button">+</button>
+        <!-- <div id="commentBox" onclick="bigger()">add comment +</div> -->
+    </div>
+
+    <!-- 引用javascripts的檔案 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
