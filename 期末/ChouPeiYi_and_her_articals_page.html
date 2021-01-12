@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChouPeiYi-page</title>
+    <!--下面連結是中文字型Noto SansTC(google只認這個中文字型)-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!--下面連結是英文字型Noto Sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /*背景的code開始*/
+        .underbg {
+            width: auto;
+            height: 100vh;
+        }
+
+        .bg-white {
+            background-color: white;
+            width: auto;
+            height: 100vh;
+        }
+
+        .bg-green {
+            background-color: #4bab77;
+            width: auto;
+            height: auto;
+            padding-top: 33px;
+        }
+
+        /*背景的code結束*/
+
+        /*作者頭像的code開始*/
+        .circleborder {
+            width: 361px;
+            height: 361px;
+            background-image: url("https://i.ibb.co/9gFr05d/Chou-Pei-Yi-1.png");
+        }
+
+        .author {
+            width: 322px;
+            height: 343px;
+        }
+
+        .author_name {
+            font-size: 60px;
+            font-weight: bold;
+            line-height: 100px;
+            color: #464646;
+            letter-spacing: 0.15em;
+            width: 210px;
+            height: 100px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .author_all {
+            width: 465px;
+            height: 482px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            margin-top: 20vh;
+        }
+
+        /*作者頭像的code結束*/
+
+        /*intro區塊的code開始*/
+        .introbox {
+            width: 416px;
+            height: 246px;
+            background-color: #FCFCFC;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            width: 144px;
+            height: 39px;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 38px;
+            font-family: 'Noto Sans TC', sans-serif;
+            letter-spacing: 0.3em;
+            color: #464646;
+        }
+
+        .introdot {
+            width: 15px;
+            height: 15px;
+            background-color: #4BAB77;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .introword {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #464646;
+            line-height: 22px;
+            font-weight: normal;
+            display: inline-block;
+        }
+
+        .introword_block {
+            width: 225px;
+        }
+
+        .introword_block01 {
+            width: 222px;
+            height: 106px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .introword_box {
+            width: 222px;
+            height: 161px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        /*intro區塊的code結束*/
+
+        /*about區塊的code開始*/
+        .aboutbox {
+            width: 416px;
+            height: 333px;
+            background-color: #FCFCFC;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            padding-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about {
+            width: 144px;
+            height: 39px;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 38px;
+            font-family: 'Noto Sans TC', sans-serif;
+            letter-spacing: 0.3em;
+            color: #464646;
+        }
+
+        .aboutword {
+            width: 345px;
+            height: 214px;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #464646;
+            font-weight: normal;
+        }
+
+        .aboutword_box {
+            width: 345px;
+            height: 261px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 30px;
+        }
+
+        /*about區塊的code結束*/
+
+        /*收藏文章區塊的code開始*/
+        .articalcollect {
+            width: 150px;
+            height: 39px;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 38px;
+            font-family: 'Noto Sans TC', sans-serif;
+            letter-spacing: 0.3em;
+            color: #464646;
+        }
+
+        .articalcollectbox {
+            width: 416px;
+            height: 521px;
+            background-color: #FCFCFC;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            padding-top: 30px;
+        }
+
+        .articallinkbox {
+            width: 378px;
+            height: 116px;
+            background-color: #FCFCFC;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 5px 5px 0 rgba(0, 0, 0, 0.20);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .articallink {
+            width: 238px;
+            height: 63px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 30px;
+            letter-spacing: 0.1em;
+            color: #464646;
+        }
+
+        .articallinkdate {
+            width: 235px;
+            height: 25px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 19px;
+            letter-spacing: 0.3em;
+            color: #9C9C9C;
+        }
+
+        .articallinkbox01 {
+            width: 238px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .articallinkbox02 {
+            width: 360px;
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .articallinkbox03 {
+            width: 378px;
+            height: 376px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .articalcollectall {
+            width: 380px;
+            height: 430px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        /*收藏文章區塊的code結束*/
+
+        /*留言區的code開始*/
+        .usericon {
+            width: 71px;
+            height: 71px;
+            background-color: #58A5B6;
+            border-radius: 50%;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            padding-top: 10px;
+        }
+
+        .username {
+            width: 25px;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 600;
+            font-size: 35px;
+            line-height: 48px;
+            letter-spacing: 0.3em;
+            color: #FCFCFC;
+            margin: auto;
+        }
+
+        .leavemesseageblock {
+            width: 751px;
+            height: 209px;
+            background-color: #FCFCFC;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            padding-top: 25px;
+            margin-bottom: 20px;
+        }
+
+        .leavemesseagebox01 {
+            width: 672px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .leavemesseagebox02 {
+            width: 672px;
+            height: 94px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .messeageblock {
+            width: 578px;
+            height: 56px;
+            background-color: #E7E7E7;
+            border-radius: 25px;
+            padding-left: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .messeageword {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 50px;
+            color: #464646;
+            letter-spacing: 0.1em;
+        }
+
+        .leavemesseage-line {
+            width: 670px;
+            height: 0px;
+            border: 1px solid #9C9C9C;
+            background-color: #9C9C9C;
+        }
+
+        .iconbox {
+            width: 478px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: auto;
+        }
+
+        .iconbox01 {
+            width: 182px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon-word {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 50px;
+            letter-spacing: 0.1em;
+            letter-spacing: 0.1em;
+        }
+
+        .messeageall {
+            width: 672px;
+            height: 153px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        /*留言區的code結束*/
+
+        /*posts區的code開始*/
+        .postsblock {
+            width: 751px;
+            height: 74px;
+            background-color: #FCFCFC;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .searchblock {
+            width: 409px;
+            height: 38px;
+            background-color: #E7E7E7;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .search-word {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 50px;
+            color: #464646;
+            letter-spacing: 0.1em;
+        }
+
+        .searchbox {
+            width: 379px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .filtersbox {
+            width: 108px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .post-word {
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 600;
+            font-size: 27px;
+            line-height: 45px;
+            letter-spacing: 0.1em;
+            color: #464646;
+        }
+
+        .postall {
+            width: 696px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+        }
+
+        /*posts區的code結束*/
+
+        /*貼文的code開始*/
+        .artical01-name {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 50px;
+            letter-spacing: 0.2em;
+            color: #464646;
+        }
+
+        .artical01-date {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 19px;
+            letter-spacing: 0.3em;
+            color: #9C9C9C;
+        }
+
+        .artical01-box01 {
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .artical01-box02 {
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .more-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #9C9C9C;
+            border-radius: 50px;
+        }
+
+        .more-dot-box {
+            width: 31px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .profile-box {
+            width: 657px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .artical01-h1 {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 45px;
+            letter-spacing: 0.1em;
+            color: #464646;
+        }
+
+        .artical01-summary {
+            width: 674px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #0D0D0D;
+            text-align: justify;
+        }
+
+        .artical01-tag {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #4BAB77;
+            margin-top: 30px;
+        }
+
+        .artical01-summary-all {
+            width: 674px;
+            margin-top: 13px;
+            margin-bottom: 19px;
+        }
+
+        .img-artical {
+            width: 751px;
+        }
+
+        .like-number {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 15px;
+            line-height: 50px;
+            color: #464646;
+        }
+
+        .red-like-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .reply-box {
+            width: 653px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .artical-line {
+            width: 712px;
+            height: 0px;
+            border: 1px solid #D8D8D8;
+            background-color: #D8D8D8;
+        }
+
+        .comment-word {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 20px;
+            line-height: 50px;
+            letter-spacing: 0.13em;
+            color: #464646;
+            margin-left: 9px;
+        }
+
+        .comment-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .comment-box-all {
+            width: 577px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .artical01-box-all {
+            width: 755px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .artical01-block {
+            width: 751px;
+            background-color: #FCFCFC;
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            display: flex;
+            padding-top: 25px;
+            margin-bottom: 20px;
+        }
+
+        /*貼文的code結束*/
+
+        /*頁面左半部的code部分*/
+        .bg-green-leftside {
+            width: 416px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*頁面右半部的code部分*/
+        .bg-green-rightside {
+            width: 751px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*全部綠色頁面*/
+        .bg-green-all {
+            width: 1201px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="underbg">
+        <div class="bg-white">
+            <!--作者頭像區塊開始-->
+            <div class="author_all">
+                <div class="circleborder">
+                    <img src="https://i.ibb.co/KxFXBVm/EVA-2.png" alt="EVA-2"" style=" margin-left: 13px;margin-right:
+                        26px;margin-bottom: 18px;">
+                </div>
+                <div class="author_name">周佩怡</div>
+            </div>
+            <!--作者頭像區塊結束-->
+        </div>
+        <div class="bg-green">
+            <!--全部綠色頁面-->
+            <div class="bg-green-all">
+                <!--頁面左半邊-->
+                <div class="bg-green-leftside">
+                    <!--intro區塊開始-->
+                    <div class="introbox">
+                        <div class="introword_box">
+                            <div class="intro">Intro</div>
+                            <div class="introword_block01">
+
+                                <div class="introword_block">
+                                    <div class="introdot"></div>
+                                    <div class="introword">畢業於 國立政治大學新聞系</div>
+                                </div>
+                                <div class="introword_block">
+                                    <div class="introdot"></div>
+                                    <div class="introword">居住於 台北市</div>
+                                </div>
+                                <div class="introword_block">
+                                    <div class="introdot"></div>
+                                    <div class="introword">出生於 2000年</div>
+                                </div>
+                                <div class="introword_block">
+                                    <div class="introdot"></div>
+                                    <div class="introword">出生於 2000年</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--intro區塊結束-->
+                    <!--about區塊開始-->
+                    <div class="aboutbox">
+                        <div class="aboutword_box">
+                            <div class="about">About</div>
+                            <div class="aboutword">
+                                素就社紙木小回歡；各麼在約。別用灣、之一深始唱電去全上。家我賣有我一作，家長資個飛特跑車的，上石能樂此！上但道頭，要灣水較對一會股，天情是年愛空，意但習你發要子和害實的上成些長福問……坡何乎了，雨美術性路而體不我蘭。星優的走間公就環。之學多體坐；得一加是大，遊度專終童！中記公、是士人動破交數起。
+                            </div>
+                        </div>
+                    </div>
+                    <!--about區塊結束-->
+                    <!--收藏文章區塊開始-->
+                    <div class="articalcollectbox">
+                        <div class="articalcollectall">
+                            <div class="articalcollect">收藏文章</div>
+                            <div class="articallinkbox03">
+                                <div class="articallinkbox">
+                                    <div class="articallinkbox02">
+                                        <img src="https://i.ibb.co/gZyyJ71/Frame-14.png" alt="Frame-14"
+                                            style="width: 90px;">
+                                        <div class="articallinkbox01">
+                                            <div class="articallink">學生發揮創「皂」力　調製比例成關鍵</div>
+                                            <div class="articallinkdate">2020/12/16 23:17:22</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="articallinkbox">
+                                    <div class="articallinkbox02">
+                                        <img src="https://i.ibb.co/0q432ZX/Frame-15.png" alt="Frame-15"
+                                            style="width: 90px;">
+                                        <div class="articallinkbox01">
+                                            <div class="articallink">大學選美賽改革　去性別化成趨勢</div>
+                                            <div class="articallinkdate">2020/12/10 01:05:16</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="articallinkbox">
+                                    <div class="articallinkbox02">
+                                        <img src="https://i.ibb.co/wC8Q0cH/Frame-16.png" alt="Frame-16"
+                                            style="width: 90px;">
+                                        <div class="articallinkbox01">
+                                            <div class="articallink">柒伍壹遊戲緩步逆境　獨立打造手中人生</div>
+                                            <div class="articallinkdate">2020/12/09 23:54:26</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--收藏文章區塊結束-->
+                </div>
+                <!--頁面右半邊-->
+                <div class="bg-green-rightside">
+                    <!--留言區開始-->
+                    <div class="leavemesseageblock">
+                        <div class="messeageall">
+                            <div class="leavemesseagebox02">
+                                <div class="leavemesseagebox01">
+                                    <div class="usericon">
+                                        <div class="username">G</div>
+                                    </div>
+                                    <div class="messeageblock">
+                                        <div class="messeageword">Leave a Messeage......</div>
+                                    </div>
+                                </div>
+                                <div class="leavemesseage-line"></div>
+                            </div>
+                            <div class="iconbox">
+                                <div class="iconbox01">
+                                    <img src="https://i.ibb.co/DfwhtHV/photo-icon.png" alt="photo-icon"
+                                        style="width: 35px;height: 35px;">
+                                    <div class="icon-word">Photo/Video</div>
+                                </div>
+                                <div class="iconbox01" style="width: 88px;">
+                                    <img src="https://i.ibb.co/BZBmMhd/tag-icon.png" alt="tag-icon"
+                                        style="width: 40px;height: 40px;">
+                                    <div class="icon-word">Tag</div>
+                                </div>
+                                <div class="iconbox01" style="width: 122px;">
+                                    <img src="https://i.ibb.co/ZH7gF25/face-icon.png" alt="face-icon"
+                                        style="width: 30px;height: 30px;">
+                                    <div class="icon-word">Feeling</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--留言區結束-->
+                    <!--Posts區開始-->
+                    <div class="postsblock">
+                        <div class="postall">
+                            <div class="post-word">Posts</div>
+                            <div class="searchblock">
+                                <div class="searchbox">
+                                    <div class="search-word">Search</div>
+                                    <img src="https://i.ibb.co/bPggCDc/search-icon.png" alt="search-icon"
+                                        style="width: 20px;height: 20px;">
+                                </div>
+                            </div>
+                            <div class="searchblock" style="width: 137px;">
+                                <div class="filtersbox">
+                                    <img src="https://i.ibb.co/KG3T22Y/setting-icon.png" alt="setting-icon"
+                                        style="width: 23px;height: 20px;">
+                                    <div class="search-word">Filters</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Posts區結束-->
+                    <!--貼文區開始-->
+                    <div class="artical01-block">
+                        <div class="artical01-box-all">
+                            <div class="profile-box">
+                                <div class="artical01-box02">
+                                    <div class="usericon" style="background-color: #4BAB77;">
+                                        <div class="username" style="width: 35px;">周</div>
+                                    </div>
+                                    <div class="artical01-box01">
+                                        <div class="artical01-name">周佩怡</div>
+                                        <div class="artical01-date">2020/11/19 03:31:03</div>
+                                    </div>
+                                </div>
+                                <div class="more-dot-box">
+                                    <div class="more-dot"></div>
+                                    <div class="more-dot"></div>
+                                    <div class="more-dot"></div>
+                                </div>
+                            </div>
+                            <div class="artical01-summary-all">
+                                <div class="artical01-h1">碩博師生不睦致憾事　中國訂十「不得」互動準則</div>
+                                <div class="artical01-summary">
+                                    近年中國研究生與導師關係不佳而自殺的事件頻傳。中國教育部11日為此頒布包含十個「不得」的《研究生導師指導行為準則》，明確規定導師行為，盼解決目前師生關係不睦的問題。多數民眾對此表示贊成，但也點出舉報方式、確切罰則不明的缺漏。
+                                </div>
+                                <div class="artical01-tag">#中國 #國際 #師生關係 #研究生 #自殺研究生 #自殺</div>
+                            </div>
+                            <img class="img-artical" src="https://i.ibb.co/ZB81Jn2/Frame-6.png" alt="Frame-6">
+                            <div class="reply-box">
+                                <div class="red-like-box">
+                                    <img src="https://i.ibb.co/YcXDwYp/heart-1.png" alt="heart-1"
+                                        style="width: 25px;height: 22px;">
+                                    <div class="like-number" style="margin-left: 8px;">10</div>
+                                </div>
+                                <div class="like-number">5 comments</div>
+                            </div>
+                            <div class="artical-line"></div>
+                            <div class="comment-box-all">
+                                <div class="comment-box">
+                                    <img src="https://i.ibb.co/843kwtj/Vector-10.png" alt="Vector-10"
+                                        style="width: 23px;height: 20px;">
+                                    <div class="comment-word">Like</div>
+                                </div>
+                                <div class="comment-box">
+                                    <img src="https://i.ibb.co/txrHsYC/Vector-13.png" alt="Vector-13"
+                                        style="width: 23px;height: 20px;">
+                                    <div class="comment-word">Share</div>
+                                </div>
+                                <div class="comment-box">
+                                    <img src="https://i.ibb.co/q5ddLB5/Vector-11.png" alt="Vector-11"
+                                        style="width: 24px;height: 21px;">
+                                    <div class="comment-word">Comment</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--貼文區結束-->
+
+                    <!--貼文2區開始-->
+                    <div class="artical01-block">
+                        <div class="artical01-box-all">
+                            <div class="profile-box">
+                                <div class="artical01-box02">
+                                    <div class="usericon" style="background-color: #4BAB77;">
+                                        <div class="username" style="width: 35px;">周</div>
+                                    </div>
+                                    <div class="artical01-box01">
+                                        <div class="artical01-name">周佩怡</div>
+                                        <div class="artical01-date">2020/12/03 00:53:02</div>
+                                    </div>
+                                </div>
+                                <div class="more-dot-box">
+                                    <div class="more-dot"></div>
+                                    <div class="more-dot"></div>
+                                    <div class="more-dot"></div>
+                                </div>
+                            </div>
+                            <div class="artical01-summary-all">
+                                <div class="artical01-h1">交織跨國情感　接待家庭計畫迎文化碰撞</div>
+                                <div class="artical01-summary">
+                                    「要是無法當天慶生，有些國家只能允許提前，有些國家只允許事後。」謝雪玉接待境外生已有七年，過程中他學習到許多台灣習俗與他國不同之處，他以慶生日期為例，「台灣過生日只會提前過，所以會問問境外生的意願，但還是希望他們盡量能入境隨俗。」像這樣的文化碰撞、交流，正是「友善台灣──境外學生接待家庭專案計畫」的目標。
+                                </div>
+                                <div class="artical01-tag">#友善環境 #境外生 #接待家庭 #文化交流</div>
+                            </div>
+                            <img class="img-artical" src="https://i.ibb.co/sq856HB/Frame-6.png" alt="Frame-6">
+                            <div class="reply-box">
+                                <div class="red-like-box">
+                                    <img src="https://i.ibb.co/YcXDwYp/heart-1.png" alt="heart-1"
+                                        style="width: 25px;height: 22px;">
+                                    <div class="like-number" style="margin-left: 8px;">10</div>
+                                </div>
+                                <div class="like-number">5 comments</div>
+                            </div>
+                            <div class="artical-line"></div>
+                            <div class="comment-box-all">
+                                <div class="comment-box">
+                                    <img src="https://i.ibb.co/843kwtj/Vector-10.png" alt="Vector-10"
+                                        style="width: 23px;height: 20px;">
+                                    <div class="comment-word">Like</div>
+                                </div>
+                                <div class="comment-box">
+                                    <img src="https://i.ibb.co/txrHsYC/Vector-13.png" alt="Vector-13"
+                                        style="width: 23px;height: 20px;">
+                                    <div class="comment-word">Share</div>
+                                </div>
+                                <div class="comment-box">
+                                    <img src="https://i.ibb.co/q5ddLB5/Vector-11.png" alt="Vector-11"
+                                        style="width: 24px;height: 21px;">
+                                    <div class="comment-word">Comment</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--貼文2區結束-->
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
