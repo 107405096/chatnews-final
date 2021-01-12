@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 清除瀏覽器預設的風格 -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+	<!-- 載入思源黑體 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        div, p, img, a{
+            box-sizing: border-box
+        }
+
+        p{
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 900;
+            text-align: justify;
+            color: #464646;
+            line-height: 33px;
+
+        }
+
+
+        #titleBackground{
+            position: absolute;
+            width: 1298px;
+            left: 74px;
+            top: 342px;
+            filter: drop-shadow(-4px 8px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #logo{
+            position: absolute;
+            width: 191px;
+            left: 73px;
+            top: 80px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #chanews{
+            position: absolute;
+            width: 265px;
+            height: 178px;
+            left: 247px;
+            top: 57px;
+        }
+
+        #searchBox{
+            position: absolute;
+            width: 488px;
+            height: 57px;
+            left: 645px;
+            top: 115px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        #search-text{
+            position: absolute;
+            width: 128px;
+            left: 675px;
+            top: 125px;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #search-icon{
+            position: absolute;
+            width: 31px;
+            left: 1083px;
+            top: 126px;
+        }
+
+        #house{
+            position: absolute;
+            width: 78px;
+            left: 1163px;
+            top: 117px;
+        }
+
+        #about-us{
+            position: absolute;
+            width: 128px;
+            left: 1252px;
+            top: 108px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #title{
+            position: absolute;
+            width: 1092px;
+            left: 191px;
+            top: 449px; 
+            font-size: 60px;
+            line-height: 100px;
+            letter-spacing: 0.15em;
+            color: #FFFFFF;
+            /* vertical-align: text-bottom; */
+        }
+
+
+        #addComment-text{
+            width: 341px;
+            padding-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言區 */
+        .commentBox{
+            position: fixed;
+            background-image: url(img/comment-background.png);
+            background-size: cover;
+            width: 355px;
+            height: 109px;
+            left: 1064px;
+            top: 542px;
+        }
+
+        /* 按一下留言區放大 */
+        /* #biggerCommentBox{
+            position: fixed;
+            width: 349px;
+            height: 280px;
+            left: 1071px;
+            top: 371px;
+            background-size: cover;
+            font-size: 0px;
+            background-image:url(img/biggercommentbox.png); 
+        }*/
+
+        /* 輸入欄 */
+        #textarea {
+            width: 250px;
+            background: transparent;
+            resize: none;
+            border: none;
+            padding: 25px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 送出鍵 */
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言 */
+        li {
+            position: relative;
+            word-break: break-all;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+            color: white;
+        }
+
+        .red {
+            padding: 54px 80px 92px 62px;
+            background-image: url(img/comment1-1.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width:300px;
+            height: 298px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        } 
+        .pink {
+            padding: 60px 60px 117px 90px;
+            background-image: url(img/comment2.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width: 300px;
+            height: 370px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 1010px;
+            top: 1599px;
+        }
+
+        /* metadata */
+        #metadataBackground{
+            position: absolute;
+            width: 417px;
+            height: 342.5px;
+            left: 976px;
+            top: 651px;
+            filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .red-words{
+            position: absolute;
+            width: 261.65px;
+            height: 42.26px;
+            left: 1046.11px;
+            top: 707.71px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+
+            color: #968034;
+        }
+
+        #tags-section{
+            display: flex;
+            position: absolute;
+            width: 250px;
+            height: 85px;
+            left: 1060px;
+            top: 813px;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+
+        }
+
+        .tag{
+            /* position: absolute; */
+            width: 120px;
+            height: 36.7px;
+            /* left: 1023.94px;
+            top: 815.58px; */
+            font-size: 24px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        .circle{
+            position: absolute;
+            height: 78px;
+            width: 78px;
+            left: 74px;
+            top: 833px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #fb-icon{
+            position: absolute;
+            width: 39px;
+            height: 38px;
+            left: 20px;
+            top: 20px;
+        }
+
+        #line-icon{
+            position: absolute;
+            left: 16px;
+            top: 18px;
+            width: 46px;
+            height: 41px;
+        }
+
+        #twitter-icon{
+            position: absolute;
+            left: 17px;
+            top: 23px;
+            width: 45px;
+            height: 33px;
+        }
+
+        #top-section{
+            position: absolute;
+            width: 976px;
+            height: 394.13px;
+            left: 0px;
+            top: 1025px;
+        }
+
+        #bottom-section{
+            position: absolute;
+            width: 976px;
+            height: 541.43px;
+            left: 0px;
+            top: 4615px;
+        }
+
+        #article-background{
+            position: absolute;
+            display: flex;
+            width: 976px;
+            height: 3200px;
+            left: 0px;
+            top: 1418px;
+            background: #F4F4F4;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .text{
+            left:103px;
+            width: 770px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-section{
+            display:flex;
+            width: 838px;
+            height: 138px;
+            justify-content: space-between;
+            align-items: center;
+            /* left: 70px; */
+        }
+
+        .quote-start{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* left: 0px;
+            top: 0px; */
+        }
+
+        .quote-end{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* bottom: 0px;
+            right: 0px; */
+        }
+
+        .quote-text{
+            /* position: absolute; */
+            width: 490px;
+            /* left: 174px;
+            top: auto;
+            bottom: auto; */
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+
+            color: #C7B165;
+        }
+
+        .pic-section{
+            display: flex;
+            width: 792px;
+            height: 596px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            /* left: 94px;
+            top: 245px */
+        }
+
+        .picture{
+            width: 751px;
+            height: 468px;
+            /* left: 19px;
+            top: 18px; */
+            object-fit: cover;
+        }
+
+        .pic-text{
+            height: 61px;
+            Width: 394px;
+            /* left: 19px;
+            right: 379px;
+            top: 508px; */
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #9C9C9C;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .pic-line{
+            width: 394px;
+            height: 0px;
+            /* left: 19px;
+            top: 583px; */
+            border-top: 2px solid #C7B165;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body style="width: 1446px; height: 6649px; background: #4BAB77;">
+
+    <div>
+        <img src="img/Logo-yellow.png" id="logo">
+        <img src="img/chanews.png" id="chanews">
+        <div>
+            <p id="search-text">Search</p>
+            <img id="search-icon" src="img/search-icon.png">
+            <div id="searchBox"></div>
+        </div>
+        <a href="three-dots.html">
+            <img src="img/house-green.png" id="house">
+        </a>
+        <a href="about-us.html" style="text-decoration:none">
+            <p id="about-us">About<br>us</p>
+        </a>
+    </div>
+    <div>
+        <img id="titleBackground" src="img/title-background.png">
+        <p id="title">萬名勞工上街反降編　大社工業區爭議仍待解</p>
+    </div>
+
+    <!-- 留言們 -->
+    <ul id="list"></ul>
+
+    <!-- 作者與日期等 -->
+    <div>
+        <img src="img/metadata-background-yellow.png" id="metadataBackground">
+        <p class="red-words">2020/12/31</p>
+        <p class="red-words" style="width: 300px; height: 36.7px; left: 1046.18px; top: 752.19px;">文| 周佩怡、駱芷萱</p>
+        <div id="tags-section">
+            <p class="tag">#勞權</p>
+            <p class="tag">#高雄</p>
+            <p class="tag">#環保</p>
+            <p class="tag">#經濟</p>
+        </div>
+    </div>
+
+    <!-- share -->
+    <div class="circle">
+        <img id="fb-icon" src="img/fb.png">
+    </div>
+
+    <div class="circle" style="left: 173px;">
+        <img id="line-icon" src="img/line.png">
+    </div>
+
+    <div class="circle"  style="left: 272px;">
+        <img id="twitter-icon" src="img/twitter.png">
+    </div>
+
+    <!-- 文章區 -->
+    <img id="top-section" src="img/top.png">
+    <div id="article-background">
+        <img class="picture" src="img/img-labor-1.jpg">
+        <p class="text">12月26日，上萬高雄大社工業區員工集結，以「拼經濟、顧環保、護勞權、反降編」為訴求，遊行至高雄四維行政中心前，指控市政府欲將大社工業區由特種降編為乙種的決策，影響到他們的勞動權。抗議勞工張宸菘表示，自己長年任職於工業區，年齡已屆中年，倘若現在失業，恐難順利找到下份工作養家活口。</p>
+        <div class="quote-section">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">不少抗議員工認為，時至今日，政府仍然未祭出完善的配套，如此變相關廠的行為，雖可履行當初的承諾，卻罔顧勞工的權益。</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+        <p class="text">根據《都市計畫法》規定，都市計畫內的工業用地依照可被容許的污染性高低，依序分為特種、甲種、乙種、零星等級。原先大社工業區被列為可製造放射性、液化石油氣等物質的特種工業區，然卻因工安意外頻傳，引發民眾不滿。經濟部遂於民國82年承諾，將會協助搬遷工廠，並將大社工業區降為以製造食品、運輸類等物品為主的乙種工業區。不過，此決策雖為政府順意當時民意所提出，但因缺乏完善討論及規劃，延宕至今仍爭議不斷。新高市產業總工會理事長何政家解釋，降編將使工廠無法生產化工產品，若最後間接導致關廠，則會影響勞工權益。</p>
+        <p class="text">不少抗議員工認為，時至今日，政府仍然未祭出完善的配套，如此變相關廠的行為，雖可履行當初的承諾，卻罔顧勞工的權益。此外，自民國82年至今，工廠已投入大量資金，改善過去經常為人詬病的工安污染問題。因此，若政府仍堅持實施多年前的決策，不經任何調整或更改，則會顯得不合時宜。抗議勞工柯炫合分享所見，「因為我們設備有在更新，對空污的污染有在控制，搭配環保局，環保問題已經下降很多，所以應該可以繼續生產。」</p>
+        <div class="quote-section">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">降編雖可能影響廠商投資的意願，但若經濟部督導業者維護設備，並提出遷址地點輔導廠商遷移，那麼降編所造成的負面影響，也就不會像員工及業者預期的嚴重。</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+        <p class="text">由於大社工業區屬於石化業的中下游，與上游的中油高雄廠合作，是台灣第一個完整的石化業聚落，也是當地的經濟重鎮。因此，工廠方認為，若市政府強制將大社工業區降為乙種，不僅剝奪居民的工作機會，也會衝擊台灣石化產業。大連化學工業股份有限公司廠長黃先生（化名）指出，整個工業區大概70％勞工都是居民，更直言：「這個問題根本是外面的媒體、環團炒作。」不僅如此他也提到，若台灣產業聚落的中游斷掉，整個產業鏈將會崩解。</p>
+        <p class="text">贊成降編的環保團體則表示，維持大社工業區的特種等級將會弊大於利。地球公民基金會副執行長王敏玲分析，高汙染工廠設置在人口密集的地方，對健康的影響將遠大於對經濟的幫助。此外，她亦說明乙種工業區從事的低汙染工業，可以聘雇較多的人力，反而有助於當地經濟發展。高雄市政府也補充，降編雖可能影響廠商投資的意願，但若經濟部督導業者維護設備，並提出遷址地點輔導廠商遷移，那麼降編所造成的負面影響，也就不會像員工及業者預期的嚴重。</p>
+        <p class="text">大社工業區降編爭議因牽涉多方問題，導致難以達到共識，延宕近30年仍未解。若政府得以提出完善配套措施，在將經濟與民生危害降到最低的狀況下，幫助工廠遷移或執行轉型輔導，妥善溝通取得共識後再進行降編，或許這個卡在居民、業者與政府間的難題，能夠得到解答。</p>
+
+    </div>
+    <img id="bottom-section" src="img/bottom.png">
+
+    <div class="commentBox">
+        <textarea id="textarea">add comment</textarea>
+        <button type="button">+</button>
+        <!-- <div id="commentBox" onclick="bigger()">add comment +</div> -->
+    </div>
+
+    <!-- 引用javascripts的檔案 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>

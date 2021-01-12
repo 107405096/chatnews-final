@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 清除瀏覽器預設的風格 -->
+	<link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
+
+	<!-- 載入思源黑體 -->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        div, p, img, a{
+            box-sizing: border-box
+        }
+
+        p{
+            font-family: Noto Sans;
+            font-style: normal;
+            font-weight: 900;
+            text-align: justify;
+            color: #464646;
+            line-height: 33px;
+
+        }
+
+
+        #titleBackground{
+            position: absolute;
+            width: 1298px;
+            left: 74px;
+            top: 342px;
+            filter: drop-shadow(-4px 8px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #logo{
+            position: absolute;
+            width: 191px;
+            left: 73px;
+            top: 80px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #chanews{
+            position: absolute;
+            width: 265px;
+            height: 178px;
+            left: 247px;
+            top: 57px;
+        }
+
+        #searchBox{
+            position: absolute;
+            width: 488px;
+            height: 57px;
+            left: 645px;
+            top: 115px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        #search-text{
+            position: absolute;
+            width: 128px;
+            left: 675px;
+            top: 125px;
+            font-size: 24px;
+            line-height: 33px;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #search-icon{
+            position: absolute;
+            width: 31px;
+            left: 1083px;
+            top: 126px;
+        }
+
+        #house{
+            position: absolute;
+            width: 78px;
+            left: 1163px;
+            top: 117px;
+        }
+
+        #about-us{
+            position: absolute;
+            width: 128px;
+            left: 1252px;
+            top: 108px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        #title{
+            position: absolute;
+            width: 1092px;
+            left: 191px;
+            top: 449px; 
+            font-size: 60px;
+            line-height: 100px;
+            letter-spacing: 0.15em;
+            color: #FFFFFF;
+            /* vertical-align: text-bottom; */
+        }
+
+
+        #addComment-text{
+            width: 341px;
+            padding-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言區 */
+        .commentBox{
+            position: fixed;
+            background-image: url(img/comment-background.png);
+            background-size: cover;
+            width: 355px;
+            height: 109px;
+            left: 1064px;
+            top: 542px;
+        }
+
+        /* 按一下留言區放大 */
+        /* #biggerCommentBox{
+            position: fixed;
+            width: 349px;
+            height: 280px;
+            left: 1071px;
+            top: 371px;
+            background-size: cover;
+            font-size: 0px;
+            background-image:url(img/biggercommentbox.png); 
+        }*/
+
+        /* 輸入欄 */
+        #textarea {
+            width: 250px;
+            background: transparent;
+            resize: none;
+            border: none;
+            padding: 25px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* 送出鍵 */
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 留言 */
+        li {
+            position: relative;
+            word-break: break-all;
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+            color: white;
+        }
+
+        .red {
+            padding: 54px 80px 92px 62px;
+            background-image: url(img/comment1-1.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width:300px;
+            height: 298px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        } 
+        .pink {
+            padding: 60px 60px 117px 90px;
+            background-image: url(img/comment2.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            width: 300px;
+            height: 370px;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        #list {
+            list-style: none;
+            position: absolute;
+            left: 1010px;
+            top: 1599px;
+        }
+
+        /* metadata */
+        #metadataBackground{
+            position: absolute;
+            width: 417px;
+            height: 342.5px;
+            left: 976px;
+            top: 651px;
+            filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .red-words{
+            position: absolute;
+            width: 261.65px;
+            height: 42.26px;
+            left: 1046.11px;
+            top: 707.71px;
+            font-size: 24px;
+            line-height: 33px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+
+            color: #968034;
+        }
+
+        #tags-section{
+            display: flex;
+            position: absolute;
+            width: 250px;
+            height: 85px;
+            left: 1060px;
+            top: 813px;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+
+        }
+
+        .tag{
+            /* position: absolute; */
+            width: 120px;
+            height: 36.7px;
+            /* left: 1023.94px;
+            top: 815.58px; */
+            font-size: 24px;
+            text-align: justify;
+            letter-spacing: 0.3em;
+            color: #F4F4F4;
+        }
+
+        .circle{
+            position: absolute;
+            height: 78px;
+            width: 78px;
+            left: 74px;
+            top: 833px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        #fb-icon{
+            position: absolute;
+            width: 39px;
+            height: 38px;
+            left: 20px;
+            top: 20px;
+        }
+
+        #line-icon{
+            position: absolute;
+            left: 16px;
+            top: 18px;
+            width: 46px;
+            height: 41px;
+        }
+
+        #twitter-icon{
+            position: absolute;
+            left: 17px;
+            top: 23px;
+            width: 45px;
+            height: 33px;
+        }
+
+        #top-section{
+            position: absolute;
+            width: 976px;
+            height: 394.13px;
+            left: 0px;
+            top: 1025px;
+        }
+
+        #bottom-section{
+            position: absolute;
+            width: 976px;
+            height: 541.43px;
+            left: 0px;
+            top: 5215px;
+        }
+
+        #article-background{
+            position: absolute;
+            display: flex;
+            width: 976px;
+            height: 3800px;
+            left: 0px;
+            top: 1418px;
+            background: #F4F4F4;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .text{
+            left:103px;
+            width: 770px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            letter-spacing: 0.03em;
+        }
+
+        .quote-section{
+            display:flex;
+            width: 838px;
+            height: 138px;
+            justify-content: space-between;
+            align-items: center;
+            /* left: 70px; */
+        }
+
+        .quote-start{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* left: 0px;
+            top: 0px; */
+        }
+
+        .quote-end{
+            /* position: absolute; */
+            width: 133px;
+            height: 101px;
+            /* bottom: 0px;
+            right: 0px; */
+        }
+
+        .quote-text{
+            /* position: absolute; */
+            width: 490px;
+            /* left: 174px;
+            top: auto;
+            bottom: auto; */
+            font-size: 24px;
+            line-height: 45px;
+            text-align: justify;
+            letter-spacing: 0.1em;
+
+            color: #C7B165;
+        }
+
+        .pic-section{
+            display: flex;
+            width: 792px;
+            height: 596px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            /* left: 94px;
+            top: 245px */
+        }
+
+        .picture{
+            width: 751px;
+            height: 468px;
+            /* left: 19px;
+            top: 18px; */
+            object-fit: cover;
+        }
+
+        .pic-text{
+            height: 61px;
+            Width: 394px;
+            /* left: 19px;
+            right: 379px;
+            top: 508px; */
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: #9C9C9C;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        .pic-line{
+            width: 394px;
+            height: 0px;
+            /* left: 19px;
+            top: 583px; */
+            border-top: 2px solid #C7B165;
+        }
+
+
+
+
+    </style>
+    
+</head>
+<body style="width: 1446px; height: 6649px; background: #4BAB77;">
+
+    <div>
+        <img src="img/Logo-yellow.png" id="logo">
+        <img src="img/chanews.png" id="chanews">
+        <div>
+            <p id="search-text">Search</p>
+            <img id="search-icon" src="img/search-icon.png">
+            <div id="searchBox"></div>
+        </div>
+        <a href="three-dots.html">
+            <img src="img/house-green.png" id="house">
+        </a>
+        <a href="about-us.html" style="text-decoration:none">
+            <p id="about-us">About<br>us</p>
+        </a>
+    </div>
+    <div>
+        <img id="titleBackground" src="img/title-background.png">
+        <p id="title">反建設入保護區　印度生控再開發危生態多樣</p>
+    </div>
+
+    <!-- 留言們 -->
+    <ul id="list"></ul>
+
+    <!-- 作者與日期等 -->
+    <div>
+        <img src="img/metadata-background-yellow.png" id="metadataBackground">
+        <p class="red-words">2020/12/24</p>
+        <p class="red-words" style="width: 300px; height: 36.7px; left: 1046.18px; top: 752.19px;">文| 周佩怡</p>
+        <div id="tags-section">
+            <p class="tag">#印度</p>
+            <p class="tag">#國際</p>
+            <p class="tag">#生態</p>
+            <p class="tag">#經濟</p>
+        </div>
+    </div>
+
+    <!-- share -->
+    <div class="circle">
+        <img id="fb-icon" src="img/fb.png">
+    </div>
+
+    <div class="circle" style="left: 173px;">
+        <img id="line-icon" src="img/line.png">
+    </div>
+
+    <div class="circle"  style="left: 272px;">
+        <img id="twitter-icon" src="img/twitter.png">
+    </div>
+
+    <!-- 文章區 -->
+    <img id="top-section" src="img/top.png">
+    <div id="article-background">
+        
+        <p class="text">部分印度大學生質疑政府將於果阿邦野生動物保護區、國家公園進行的開發案將造成環境浩劫。抗議學生藉19日總統拉姆．納特．柯文德 （Ram Nath Kovind）發表「果阿解放紀念日演說」的機會，向其抗議並遞交請願書，表達對開發案的擔憂。然而，數名青年卻於過程中遭警方無故逮捕。</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-india-1.jpg">
+            <p class="pic-text">抗議民眾手持看板，以危及生態環境、經濟發展為由，堅決反對即將進行的開發案。　圖／米西拉・帕博乎迪賽提供</p>
+            <div class="pic-line"></div>
+        </div>
+        <p class="text">開發案的爭議源自印度政府計畫於果阿邦莫林國家公園（Mollem National Park）與巴萬・馬哈韋野生動物保護區（Bhagwan Mahavir Wildlife Sanctuary）內，延伸西南鐵路、擴大國道，同時修建電力傳輸線。政府宣稱，開發案擴大貨物和旅客列車運行，將滿足果阿邦日益增長的交通需求，並提供國家急需的電力。然而《投資印度（Invest India）》數據顯示，果阿邦是印度人均國民生產總值（Per Capita Gross National Product, Per Capita G‧N‧P）（註）最高的邦之一，經濟發展良好。其境內國家公園、保護區內的西高止山脈是世界上36個生物多樣性熱點之一，西元2012年更被宣告為世界自然遺產。如今政府卻要再開發此地，因而引發爭議。</p>
+        <div class="pic-section">
+            <img class="picture" src="img/img-india-2.jpg">
+            <p class="pic-text">大眾原先在網路上發聲抗議，自11月起轉為在不同地點舉行和平聚會，以表反對開發案之意。　圖／米西拉・帕博乎迪賽提供</p>
+            <div class="pic-line"></div>
+        </div>
+        <div class="quote-section">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">「果阿邦期望自我改造成一個更加步調緩慢、綠色的旅遊景點。但這些項目沒有實現這一目標，還阻礙了發展。」</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+        <p class="text">開發案的威脅可分成三個層面：在生態環境方面，開發案將破壞動物棲息地，動物會闖入人類居住環境，加劇人類、動物間的衝突，增加人畜疾病的傳染機會；經濟方面，旅遊業是果阿邦主要經濟來源，旅遊業者擔心遊客對受損的景觀失去興趣，衝擊當地觀光；在居住權部分，居民深怕家園開發後會被迫撤離。大學生米西拉・帕博乎迪賽（Mithila Prabhudesai）憤慨道：「果阿邦期望自我改造成一個更加步調緩慢、綠色的旅遊景點。但這些項目沒有實現這一目標，還阻礙了發展。」</p>
+        <p class="text">反對開發者認為開發案對果阿邦毫無幫助，僅使煤礦產業相關者受益。抗議民眾雪莉・費爾南德斯（Sherry Fernandes）指出，進口的煤炭屆時將透過延伸的鐵路、擴大的國道，運往相鄰的卡納塔克邦鋼鐵廠，增加企業家的收益。他認為修建電力傳輸線的意義不明，「總理、電力部長對這些項目將如何造福人民，都沒有答案，平民百姓沒有被考慮在內。」</p>
+        <div class="quote-section">
+            <img class="quote-start" src="img/image-quote-start.png">
+            <p class="quote-text">百位研究人員和學者更因此組成抗議小組，致信印度野生動物研究所（Wildlife Institute of India），呼籲他們審慎評估環境。</p>
+            <img class="quote-end" src="img/image-quote-end.png">
+        </div>
+        <p class="text">政府4月宣布計畫案後，大眾5月開始寫信抗議，但政府卻否認收到信件，因此大眾開始線上發聲，11月起果阿邦民眾陸續在西南鐵路線的軌道附近抗議，吸引數千人點燭、呼喊口號守夜。抗議者也善用社交軟體，以「守護莫林」、「使莫林的未來自由」等標籤串連示威者，傳播該區生物多樣性的知識。百位研究人員和學者更因此組成抗議小組，致信印度野生動物研究所（Wildlife Institute of India），呼籲他們審慎評估環境。示威者預計在社群軟體上發起挑戰活動，讓更多人認識開發案的威脅、加入抗議，帕博乎迪賽説：「我們可能會很累，但我們不會放棄，會繼續前進，繼續發聲。」</p>
+        <p class="text">根據《印度時報（The times of India）》報導，果阿前進黨主席維傑・薩爾德斯（Vijai Sardesai）譴責政府拘留學生的舉動，認為政府試圖壓制異議人士的行為與葡萄牙殖民者無異。此外，民眾也轉發被捕者直播的影片，撻伐警察執法無據。馬尼帕爾理工學院（Manipal Institute of Technology, MIT）學生吉爾伯特・索欲思（Gilbert Soyus）認為沒有證據能證明青年威脅到國家或任何人，「警察的行動十分輕率、不公平，基本上根本莫名其妙。」</p>
+
+    </div>
+    <img id="bottom-section" src="img/bottom.png">
+
+    <div class="commentBox">
+        <textarea id="textarea">add comment</textarea>
+        <button type="button">+</button>
+        <!-- <div id="commentBox" onclick="bigger()">add comment +</div> -->
+    </div>
+
+    <!-- 引用javascripts的檔案 -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
